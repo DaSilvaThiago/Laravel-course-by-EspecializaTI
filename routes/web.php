@@ -1,9 +1,7 @@
 <?php
 
-use App\Http\Controllers\Site\AboutController;
-use App\Http\Controllers\Site\BuyController;
+use App\Http\Controllers\admin\{SupportController};
 use App\Http\Controllers\Site\ContactController;
-use App\Http\Controllers\Site\ProductController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -13,8 +11,4 @@ Route::get('/', function () {
 
 Route::get('/contact', [ContactController::class, 'Contact']);
 
-Route::get('/about', [AboutController::class, 'about']);
-
-Route::get('/products', [ProductController::class, 'Product']);
-
-Route::get('/buy', [BuyController::class, 'Buy']);
+Route::get('/supports', [SupportController::class, 'index'])->name('supports.index');
