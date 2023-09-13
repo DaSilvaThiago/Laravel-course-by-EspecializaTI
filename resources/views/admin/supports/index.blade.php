@@ -8,7 +8,6 @@
 </head>
 <body>
     <h1>Supports</h1>
-    <a href="{{route('supports.create')}}">Create question</a>
     <table>
         <thead>
             <th>subject</th>
@@ -29,5 +28,6 @@
             @endforeach    
         </tbody>
     </table>
+    <a href="{{route ('supports.create')}}">create</a>
 </body>
 </html>

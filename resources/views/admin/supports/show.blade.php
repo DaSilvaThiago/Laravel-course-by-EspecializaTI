@@ -13,6 +13,11 @@
         <li>Status: {{$support->status}}</li>
         <li>Content: {{$support->content}}</li>
     </ul>
+    <form action="{{route('supports.destroy', $support->id)}}" method="post">
+    @method('DELETE')
+    @csrf
+        <button type="submit">Delete</button>
+    </form>
     <a href="{{route('supports.index')}}">Back</a>
 </body>
 </html>

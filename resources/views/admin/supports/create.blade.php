@@ -7,13 +7,20 @@
     <title>Create</title>
 </head>
 <body>
-    <h1>New Question</h1>
+    <h1>Create a question</h1>
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            {{$error}}
+        @endforeach
+    @endif
+
     <form action="{{route('supports.store')}}" method="post">
-        @csrf
-        <label for="subject">Subject: </label>
-        <input type="text" name="subject">
-        <textarea name="content" id="" cols="30" rows="10">Content</textarea>
-        <button type="submit">Send</button>
-    </form>
+    @csrf
+    <label for="subject">Subject</label>
+    <input type="text" name="subject" value="{{old('subject')}}">
+    <textarea name="content" id="" cols="30" rows="10">{{old('content')}}</textarea>
+    <button type="submit">Create</button>
+</form>
+<a href="{{route('supports.index')}}">Back</a>
 </body>
 </html>
